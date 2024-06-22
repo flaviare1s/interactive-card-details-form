@@ -22,7 +22,149 @@ html {
 }
 
 body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto;
+}
+
+header {
+  background-color: var(--very-dark-violet);
+  position: relative;
+  padding: 32px 16px 51px 16px;
+  max-height: 240px;
+}
+
+figure {
+  width: 286px;
+  height: 157px;
+}
+
+img {
+  width: 100%;
+}
+
+.back {
+  width: 286px;
+  height: 157px;
+  position: absolute;
+  top: 32px;
+  left: 73px;
+  z-index: 1;
+}
+
+.front {
+  width: 286px;
+  height: 157px;
+  position: absolute;
+  top: 126px;
+ left: 16px;
+  z-index: 2;
+}
+
+.card-logo {
+  width: 54px;
+  position: absolute;
+  top: 144px;
+  left: 36px;
+  z-index: 3;
+}
+
+.card-data {
+  position: absolute;
+  top: 211px;
+  left: 36px;
+  z-index: 3;
+  color: white;
+  font-weight: 500;
+}
+
+.card-details {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 17px;
+}
+
+#card-number {
   font-size: 1.8rem;
+  letter-spacing: 2.2px;
+  line-height: auto;
+}
+
+#cardholder-name, #exp-date {
+  font-size: 0.9rem;
+  letter-spacing: 1.3px;
+  line-height: auto;
+  text-transform: uppercase;
+}
+
+#cvc {
+  width: 164px;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto;
+  padding: 91px 24px 45px 24px;
+  max-width: 375px;
+}
+
+form {
+  text-transform: uppercase;
+  color: var(--very-dark-violet);
+  font-size: 1.2rem;
+  font-weight: 500;
+  letter-spacing: 2px;
+  line-height: auto;
+  width: 100%;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  border-radius: 8px;
+}
+
+.form-group-container, .form-date {
+  display: flex;
+  gap: 8px;
+}
+
+.form-date input {
+  width: 72px;
+}
+
+input {
+  height: 45px;
+  border-radius: 8px;
+  border: 1px solid var(--light-grayish-violet);
+  margin-top: 9px;
+  font-size: 1.8rem;
+  font-weight: 500;
+  padding-left: 16px;
+}
+
+input::placeholder {
+  color: var(--light-grayish-violet);
+}
+
+button {
+  width: 100%;
+  height: 53px;
+  border-radius: 8px;
+  background-color: var(--very-dark-violet);
+  color: var(--white);
+  font-size: 1.8rem;
+  font-weight: 500;   
+  border: none;
+  cursor: pointer;
+}
+
+.icon {
+  width: 80px;
 }
 
 .attribution {
@@ -32,4 +174,12 @@ body {
 .attribution a {
   color: var(--red);
   font-weight: bold;
+}
+
+.hidden {
+  display: none;
+}
+
+.active {
+  display: block;
 }
