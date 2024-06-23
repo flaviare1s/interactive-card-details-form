@@ -37,7 +37,7 @@ cvc.addEventListener("input", updateCardDetails);
 
 function validateField(value, regex, errorElement, errorMessage, inputElement) {
   if (value.trim() === "") {
-    errorElement.innerText = "Can not be blank";
+    errorElement.innerText = "Can't be blank";
     inputElement.classList.add("error");
   } else if (!regex.test(value)) {
     errorElement.innerText = errorMessage;
@@ -53,7 +53,7 @@ function validateForm(event) {
 
   // Validar o nome do titular do cartão
   if (cardholderName.value.trim() === "") {
-    nameError.innerText = "Can not be blank";
+    nameError.innerText = "Can't be blank";
     cardholderName.classList.add("error");
   } else {
     nameError.innerText = "";
@@ -66,7 +66,7 @@ function validateForm(event) {
   // Validar o número do cartão
   const cardNumberRegex = /^\d{16}$/;
   if (cardNumberValue === "") {
-    numberError.innerText = "Can not be blank";
+    numberError.innerText = "Can't be blank";
     cardNumber.classList.add("error");
   } else if (!/^\d+$/.test(cardNumberValue)) {
     numberError.innerText = "Wrong format, numbers only";
