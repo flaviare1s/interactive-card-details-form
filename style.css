@@ -265,6 +265,16 @@ button:hover {
     left: 832px;
   }
 
+  #card-number {
+    font-size: 2.8rem;
+    letter-spacing: 3.42px;
+  }
+  
+  #cardholder-name, #exp-date {
+    font-size: 1.4rem;
+    letter-spacing: 2px;
+  }
+
   footer {
     background-color: var(--white);
   }
