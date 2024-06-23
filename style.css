@@ -295,10 +295,6 @@ main span {
     gap: 20px;
   }
 
-  .form-group {
-    margin-bottom: 26px;
-  }
-
   .form-date {
     gap: 10px;
   }
@@ -309,6 +305,7 @@ main span {
 
   button {
     width: 381px;
+    margin-top: 8px;
   }
 
   footer {
