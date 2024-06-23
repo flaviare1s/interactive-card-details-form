@@ -94,6 +94,7 @@ img {
   left: 302px;
   color: white;
   font-size: .9rem;
+  letter-spacing: 1.3px;
   z-index: 3;
 }
 
@@ -312,9 +313,10 @@ main span {
 
   #card-cvc {
     top: 580px;
-    left: 610px;
+    left: 612px;
     color: white;
     font-size: 1.4rem;
+    letter-spacing: 2px;
     z-index: 3;
   }
 
