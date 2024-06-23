@@ -88,6 +88,15 @@ img {
   margin-top: 17px;
 }
 
+#card-cvc {
+  position: absolute;
+  top: 105px;
+  left: 302px;
+  color: white;
+  font-size: .9rem;
+  z-index: 3;
+}
+
 #card-number {
   font-size: 1.8rem;
   letter-spacing: 2.2px;
@@ -299,6 +308,14 @@ main span {
 
   .form-date {
     gap: 10px;
+  }
+
+  #card-cvc {
+    top: 580px;
+    left: 610px;
+    color: white;
+    font-size: 1.4rem;
+    z-index: 3;
   }
 
   #cvc {

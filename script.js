@@ -2,6 +2,7 @@ const numberDisplay = document.querySelector("#card-number");
 const nameDisplay = document.querySelector("#cardholder-name");
 const monthDisplay = document.querySelector("#month");
 const yearDisplay = document.querySelector("#year");
+const cvcDisplay = document.querySelector("#card-cvc");
 
 const cardNumber = document.querySelector("#number");
 const cardholderName = document.querySelector("#name");
@@ -25,12 +26,14 @@ function updateCardDetails() {
   nameDisplay.innerText = cardholderName.value || 'Jane Appleseed';
   monthDisplay.innerText = expMonth.value || '00';
   yearDisplay.innerText = expYear.value || '00';
+  cvcDisplay.innerText = cvc.value || '000';
 }
 
 cardNumber.addEventListener("input", updateCardDetails);
 cardholderName.addEventListener("input", updateCardDetails);
 expMonth.addEventListener("input", updateCardDetails);
 expYear.addEventListener("input", updateCardDetails);
+cvc.addEventListener("input", updateCardDetails);
 
 function validateField(value, regex, errorElement, errorMessage, inputElement) {
   if (value.trim() === "") {
