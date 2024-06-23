@@ -206,7 +206,7 @@ button:hover {
   font-weight: bold;
 }
 
-span {
+main span {
   color: var(--red);
   text-transform: none;
   margin-top: 8px;
