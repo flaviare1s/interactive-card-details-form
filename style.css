@@ -151,7 +151,7 @@ input {
 }
 
 input::placeholder {
-  color: var(--light-grayish-violet);
+  color: var(--dark-grayish-violet);
 }
 
 button {
