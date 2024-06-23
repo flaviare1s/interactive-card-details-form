@@ -33,7 +33,7 @@ expMonth.addEventListener("input", updateCardDetails);
 expYear.addEventListener("input", updateCardDetails);
 
 function validateField(value, regex, errorElement, errorMessage, inputElement) {
-  if (value === "") {
+  if (value.trim() === "") {
     errorElement.innerText = "Can not be blank";
     inputElement.classList.add("error");
   } else if (!regex.test(value)) {
@@ -57,15 +57,18 @@ function validateForm(event) {
     cardholderName.classList.remove("error");
   }
 
+  // Remover espaços em branco do número do cartão antes de validar
+  const cardNumberValue = cardNumber.value.replace(/\s/g, '');
+
   // Validar o número do cartão
-  const cardNumberRegex = /^\d{4}\s\d{4}\s\d{4}\s\d{4}$/;
-  if (cardNumber.value.trim() === "") {
+  const cardNumberRegex = /^\d{16}$/;
+  if (cardNumberValue === "") {
     numberError.innerText = "Can not be blank";
     cardNumber.classList.add("error");
-  } else if (!/^[\d\s]+$/.test(cardNumber.value)) {
+  } else if (!/^\d+$/.test(cardNumberValue)) {
     numberError.innerText = "Wrong format, numbers only";
     cardNumber.classList.add("error");
-  } else if (!cardNumberRegex.test(cardNumber.value)) {
+  } else if (!cardNumberRegex.test(cardNumberValue)) {
     numberError.innerText = "Wrong format";
     cardNumber.classList.add("error");
   } else {
@@ -82,14 +85,17 @@ function validateForm(event) {
   // Validar o CVC
   validateField(cvc.value, /^\d{3}$/, cvcError, "Wrong format", cvc);
 
+  // Mostrar a seção de completado se não houver erros
   if (document.querySelectorAll('.error').length === 0) {
     confirmSection.classList.remove('active');
     confirmSection.classList.add('hidden');
     completedSection.classList.remove('hidden');
+    completedSection.classList.add('active');
   }
 }
 
 confirmBtn.addEventListener("click", validateForm);
+
 continueBtn.addEventListener("click", () => {
   completedSection.classList.remove('active');
   completedSection.classList.add('hidden');
