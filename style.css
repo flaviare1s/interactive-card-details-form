@@ -151,7 +151,8 @@ input {
 }
 
 input::placeholder {
-  color: var(--dark-grayish-violet);
+  color: var(--light-grayish-violet);
+  font-family: 'Space Grotesk', sans-serif;
 }
 
 button {
@@ -164,6 +165,7 @@ button {
   font-weight: 500;   
   border: none;
   cursor: pointer;
+  font-family: 'Space Grotesk', sans-serif;
 }
 
 button:hover {
