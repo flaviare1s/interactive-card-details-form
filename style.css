@@ -27,13 +27,12 @@ body {
   flex-direction: column;
   justify-content: center;
   margin: auto;
+  background-image: url('./images/bg-main-mobile.png');
+  background-repeat: no-repeat;
+  background-size: 100% 240px;
 }
 
 header {
-  background-color: var(--very-dark-violet);
-  background-image: url('./images/bg-main-mobile.png');
-  background-repeat: no-repeat;
-  background-size: cover;
   position: relative;
   padding: 32px 16px 51px 16px;
   max-height: 240px;
@@ -213,4 +212,60 @@ button:hover {
 
 .active {
   display: flex;
+}
+
+
+@media (min-width: 400px) and (max-width: 1280px) {
+  body {
+    margin: 0 10%;
+  }
+}
+
+@media (min-width: 1280px) {
+  body {
+    background-image: url(./images/bg-main-desktop.png);
+    background-size: contain;
+    height: calc(100vh + 273px);
+    margin: auto;
+  }
+
+  figure {
+    width: 447px;
+    height: 245px;
+  }
+
+  .back {
+    width: 447px;
+    height: 245px;
+    top: 469px;
+    left: 258px;
+  }
+
+  .front {
+    width: 447px;
+    height: 245px;
+    top: 187px;
+    left: 164px;
+  }
+
+  .card-logo {
+    width: 84px;
+    top: 215px;
+    left: 196px;
+  }
+
+  .card-data {
+    top: 326px;
+    left: 196px;
+  }
+
+  #completed-section, #confirm-section {
+    position: absolute;
+    top: 275px;
+    left: 832px;
+  }
+
+  footer {
+    background-color: var(--white);
+  }
 }
