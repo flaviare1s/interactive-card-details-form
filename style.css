@@ -295,6 +295,10 @@ main span {
     gap: 20px;
   }
 
+  .form-group {
+    margin-bottom: 26px;
+  }
+
   .form-date {
     gap: 10px;
   }
