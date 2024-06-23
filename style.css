@@ -206,6 +206,13 @@ button:hover {
   font-weight: bold;
 }
 
+span {
+  color: var(--red);
+  text-transform: none;
+  margin-top: 8px;
+  font-size: 1.2rem;
+}
+
 .hidden {
   display: none;
 }

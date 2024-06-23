@@ -39,6 +39,7 @@
         <div class="form-group">
           <label for="number">Card Number</label>
           <input type="text" id="number" name="number" placeholder="e.g. 1234 5678 9123 0000" required>
+          <span id="number-error"></span>
         </div>
         <div class="form-group-container">
           <div class="form-group">
@@ -47,10 +48,12 @@
               <input type="text" id="exp-month" name="exp-month" placeholder="MM" required>
               <input type="text" id="exp-year" name="exp-year" placeholder="YY" required>
             </div>
+            <span id="exp-date-error"></span>
           </div>
           <div class="form-group">
             <label for="cvc">CVC</label>
             <input type="text" id="cvc" name="cvc" placeholder="e.g. 123" required>
+            <span id="cvc-error"></span>
           </div>
         </div>
         <button type="submit">Confirm</button>
