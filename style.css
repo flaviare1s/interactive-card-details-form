@@ -235,7 +235,7 @@ main span {
 @media (min-width: 1280px) {
   body {
     background-image: url(./images/bg-main-desktop.png);
-    background-size: contain;
+    background-size: 483px 100%;
     height: calc(100vh + 273px);
     margin: auto;
   }
@@ -274,6 +274,7 @@ main span {
     position: absolute;
     top: 275px;
     left: 832px;
+    width: 381px;
   }
 
   #card-number {
@@ -284,6 +285,26 @@ main span {
   #cardholder-name, #exp-date {
     font-size: 1.4rem;
     letter-spacing: 2px;
+  }
+
+  .form-date input {
+    width: 80px;
+  }
+
+  .form-group-container {
+    gap: 20px;
+  }
+
+  .form-date {
+    gap: 10px;
+  }
+
+  #cvc {
+    width: 191px;
+  }
+
+  button {
+    width: 381px;
   }
 
   footer {
