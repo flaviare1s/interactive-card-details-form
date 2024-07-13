@@ -51,7 +51,6 @@ function validateField(value, regex, errorElement, errorMessage, inputElement) {
 function validateForm(event) {
   event.preventDefault();
 
-  // Validar o nome do titular do cartão
   if (cardholderName.value.trim() === "") {
     nameError.innerText = "Can't be blank";
     cardholderName.classList.add("error");
@@ -60,15 +59,13 @@ function validateForm(event) {
     cardholderName.classList.remove("error");
   }
 
-  // Remover espaços em branco do número do cartão antes de validar
   const cardNumberValue = cardNumber.value.replace(/\s/g, '');
 
-  // Validar o número do cartão
-  const cardNumberRegex = /^\d{16}$/;
+  const cardNumberRegex = /^(\d{4} \d{4} \d{4} \d{4}|\d{16})$/;
   if (cardNumberValue === "") {
     numberError.innerText = "Can't be blank";
     cardNumber.classList.add("error");
-  } else if (!/^\d+$/.test(cardNumberValue)) {
+  } else if (!/^(\d\s?)+$/.test(cardNumberValue)) {
     numberError.innerText = "Wrong format, numbers only";
     cardNumber.classList.add("error");
   } else if (!cardNumberRegex.test(cardNumberValue)) {
@@ -79,16 +76,34 @@ function validateForm(event) {
     cardNumber.classList.remove("error");
   }
 
-  // Validar o mês de expiração
-  validateField(expMonth.value, /^\d{2}$/, expDateError, "Wrong format", expMonth);
+  // Validação para o mês de expiração
+  const expMonthValue = expMonth.value.trim();
+  if (expMonthValue === "") {
+    expDateError.innerText = "Can't be blank";
+    expMonth.classList.add("error");
+  } else if (!/^\d{2}$/.test(expMonthValue) || parseInt(expMonthValue) < 1 || parseInt(expMonthValue) > 12) {
+    expDateError.innerText = "Wrong format";
+    expMonth.classList.add("error");
+  } else {
+    expMonth.classList.remove("error");
+    expDateError.innerText = "";
+  }
 
-  // Validar o ano de expiração
-  validateField(expYear.value, /^\d{2}$/, expDateError, "Wrong format", expYear);
+  // Validação para o ano de expiração
+  const expYearValue = expYear.value.trim();
+  if (expYearValue === "") {
+    expDateError.innerText = "Can't be blank";
+    expYear.classList.add("error");
+  } else if (!/^\d{2}$/.test(expYearValue) || parseInt(expYearValue) < 24) {
+    expDateError.innerText = "Wrong format";
+    expYear.classList.add("error");
+  } else {
+    expYear.classList.remove("error");
+    expDateError.innerText = "";
+  }
 
-  // Validar o CVC
   validateField(cvc.value, /^\d{3}$/, cvcError, "Wrong format", cvc);
 
-  // Mostrar a seção de completado se não houver erros
   if (document.querySelectorAll('.error').length === 0) {
     confirmSection.classList.remove('active');
     confirmSection.classList.add('hidden');
